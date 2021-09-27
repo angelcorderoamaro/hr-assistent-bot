@@ -4,8 +4,8 @@
   "description": "Kore.ai offers Bots SDKs as a set of platform-specific client libraries that provide a quick and convenient way to integrate Kore.ai Bots chat capability into custom applications",
   "scripts": {
     "build-js": "watchify cliente/app.js -o public/build.js",
-    "start": "nodemon servidor/app.js",
-    "build-jss": "node servidor/app.js",
+    "start": "nodemon server.js",
+    "build-jss": "node server.js",
     "iniciar": "browserify -g uglifyify cliente/app.js > public/build.min.js"
   },
   "repository": {
