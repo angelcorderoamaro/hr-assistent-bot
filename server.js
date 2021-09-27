@@ -1,17 +1,27 @@
 // Variables
+
+'use strict'
+
+const express = require('express');
+const app = express();
+
 var path = require('path');
-var express = require('express');
-var app = require('express')();
-var http = require('http').Server(app);
+
 
 //Configure port
-var port=6000;
+var puerto = 5014;
 
 //App directories
 var PROJECT_DIR = path.normalize(__dirname);
+app.set('port', (process.env.PORT || puerto))
+app.start = app.listen(app.get('port'), function () {
+    console.log('Escuchando en el puerto http://localhost:'+ puerto + '/UI');
 
-app.use('/',express.static(path.join(PROJECT_DIR, '')));
-
-http.listen(port, function(){
-    console.log('Sample Application runnning at http://localhost:'+port+'/UI');
 });
+
+
+app.use('/', express.static(path.join(PROJECT_DIR, '')));
+
+
+
+module.exports = app;
