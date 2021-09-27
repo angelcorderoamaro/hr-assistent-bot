@@ -5,7 +5,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 
 //Configure port
-var port=3000;
+var port=6000;
 
 //App directories
 var PROJECT_DIR = path.normalize(__dirname);
